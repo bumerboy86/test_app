@@ -1,13 +1,14 @@
 import React from "react";
 import styles from "./CompanyDetails.module.css";
 import { ButtonBrandOutline } from "../Buttons/ButtonBrandOutline";
+import EditIcon from "../../assets/edit.svg";
 
 export const CompanyDetails = ({ companyData }) => {
   return (
     <section className={styles.company_details}>
       <div className={styles.company_details_functional}>
         <p>Company Details</p>
-        <ButtonBrandOutline cont={"edit"} />
+        <ButtonBrandOutline image={EditIcon} cont={"edit"} />
       </div>
       <div className={styles.company_details_item}>
         <h3>Agreement:</h3>
