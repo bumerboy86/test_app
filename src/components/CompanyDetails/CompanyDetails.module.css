@@ -1,0 +1,33 @@
+.company_details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  background: var(--white);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.company_details_functional {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.company_details_functional p {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.3px;
+  vertical-align: middle;
+}
+
+/* .company_details {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.3px;
+  vertical-align: middle;
+} */

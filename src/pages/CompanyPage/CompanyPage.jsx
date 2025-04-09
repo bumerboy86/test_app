@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useLazyGetCompanyByIdQuery } from "../../store/services/company_api";
 import styles from "./CompanyPage.module.css";
-import { ButtonBrandOutline } from "../../components/Buttons/ButtonBrandOutline";
+// import { ButtonBrandOutline } from "../../components/Buttons/ButtonBrandOutline";
+import { CompanyDetails } from "../../components/CompanyDetails/CompanyDetails";
 
 export const CompanyPage = () => {
   const { id } = useParams();
@@ -18,31 +19,20 @@ export const CompanyPage = () => {
     }
   }, [companyData]);
   return (
-    <div className={styles.company}>
-      <section className={styles.company_title}>
-        <h4>Eternal Rest Funeral Home</h4>
-        <div>
-          <button>1we1w</button> <button>2eq2</button>
+    <>
+      {companyData ? (
+        <div className={styles.company}>
+          <section className={styles.company_title}>
+            <h4>{companyData?.name}</h4>
+            <div>
+              <button>1we1w</button> <button>2eq2</button>
+            </div>
+          </section>
+          <CompanyDetails companyData={companyData} />
         </div>
-      </section>
-      <section className={styles.company_details}>
-        <div className={styles.company_function}>
-          <p className={styles.company_title}>Company Details</p>
-          <ButtonBrandOutline cont={"edit"} />
-        </div>
-        <div className={styles.company_details_item}>
-          <h3>Company Address</h3>
-          <p>{companyData?.address}</p>
-        </div>
-        <div className={styles.company_details_item}>
-          <h3>Company Phone</h3>
-          <p>{companyData?.phone}</p>
-        </div>
-        <div className={styles.company_details_item}>
-          <h3>Company Email</h3>
-          <p>{companyData?.email}</p>
-        </div>
-      </section>
-    </div>
+      ) : (
+        <p>По Вашему запросу компания не найдейдена</p>
+      )}
+    </>
   );
 };
